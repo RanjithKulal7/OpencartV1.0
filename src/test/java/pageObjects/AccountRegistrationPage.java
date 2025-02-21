@@ -10,6 +10,7 @@ public class AccountRegistrationPage extends BasePage{
 	{
 		super(driver);
 	}
+	//Test
 	
 	
 	@FindBy(xpath="//input[@id='input-firstname']")
