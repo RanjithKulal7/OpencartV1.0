@@ -6,17 +6,16 @@ import pageObjects.HomePage;
 import pageObjects.SearchPage;
 import testBase.BaseClass;
 
-public class TC003_Search extends BaseClass{
-	
+public class TC004_AddProductToCart extends BaseClass {
 	@Test (groups= {"Sanity","Master"})
-	public void getAllSearchResults() {
+	public void addProductToCart() {
 		HomePage hp= new HomePage(driver);
-		hp.enterInSearchBox("I");
+		hp.enterInSearchBox("Iphone");
 		hp.clickSearch();
 		SearchPage sp= new SearchPage (driver);
 		sp.getAllSearchResults();
+		sp.addToCart();
 		
 	}
 
-	
 }

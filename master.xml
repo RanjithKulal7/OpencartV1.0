@@ -22,8 +22,10 @@
 <parameter name="browser" value="chrome"/>
 
     <classes>
-      <class name="testCases.TC001_AccountRegistrationTest"/>
-  		<class name="testCases.TC002_LoginTest"/>
+     	<class name="testCases.TC001_AccountRegistrationTest"/>
+  		<class name="testCases.TC002_LoginTest"/> 
+		<class name="testCases.TC003_Search"/>
+		<class name="testCases.TC004_AddProductToCart"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
