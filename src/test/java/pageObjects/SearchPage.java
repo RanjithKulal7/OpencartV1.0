@@ -9,7 +9,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class SearchPage extends BasePage{
 	
-	String productname;
+	//String productname;
+	public String expectedproduct;
 	
 	public SearchPage(WebDriver driver)
 	{
@@ -25,6 +26,9 @@ List <WebElement> searchResults;
 @FindBy (xpath="//div[@class='product-thumb']//following::div[@class='button-group']//button[1]")
 WebElement btnAddToCart;
 
+@FindBy(xpath = "//div[contains(@class,'alert-success')]")
+WebElement successMessage;
+
 public String getSearchString()
 {
 	String SearchString =searchstring.getDomProperty("value");
@@ -39,9 +43,9 @@ public void getAllSearchResults()
 	}
 }
 
-public void addToCart()
+public void addToCart() throws InterruptedException
 {
-	String expectedproduct = getSearchString();
+ expectedproduct = getSearchString();
 	for (WebElement searchResult:searchResults)
 	{
 		String productavailable =searchResult.getText();
@@ -49,7 +53,8 @@ public void addToCart()
 		if (productavailable.equalsIgnoreCase(expectedproduct))
 		{
 			btnAddToCart.click();
-			System.out.println("Product has been added to the cart successfully");
+			Thread.sleep(10000);
+			//System.out.println("Product has been added to the cart successfully");
 		}
 		
 		else
@@ -58,6 +63,25 @@ public void addToCart()
 		}
 	}
 	
+}
+
+public String getSuccessMessage()
+{
+    return successMessage.getText().trim();
+}
+
+public String successMsgverification()
+{
+	String message = getSuccessMessage();
+	return message;
+//    System.out.println("Extracted Message: " + message);
+//
+//    // Validating the message
+//    if (message.contains("Success: You have added " + expectedproduct + " to your shopping cart!")) {
+//        System.out.println("Product added to the cart successfully");
+//    } else {
+//        System.out.println("Product not added to the cart");
+//    }
 }
 
 }
