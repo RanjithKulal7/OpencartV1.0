@@ -6,7 +6,7 @@
       <class name="loginDP.LoginDPTest">
         <methods>
           <include name="setUp"/>
-          <include name="dpLogin" invocation-numbers="0 1 2 3"/>
+          <include name="dpLogin" invocation-numbers="0 1 2 3 5"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- loginDP.LoginDPTest -->

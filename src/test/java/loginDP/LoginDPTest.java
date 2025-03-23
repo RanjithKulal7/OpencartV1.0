@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 public class LoginDPTest {
 	
-	//Note: Not included in XLM file
+	//Note: This test is only included in LoginDPTest.xml file
 	
 	WebDriver driver;
 	@BeforeClass
@@ -53,7 +53,7 @@ public class LoginDPTest {
 		driver.quit();
 	}
 	
-	@DataProvider (name="logindp1")
+	@DataProvider (name="logindp1",indices= {0,1,2,4,5,6})
 	Object[][] loginData()
 	{
 		Object data[][]= {
@@ -61,7 +61,8 @@ public class LoginDPTest {
 				{"xyz2@gmail.com","test023"},
 				{"rkk@gmail.com","testtt123"},
 				{"john3@gmail.com","test1233"},
-				{"rohitrkautotest@gmail.com","rohitrkautotest@123"}
+				{"rohitrkautotest@gmail.com","rohitrkautotest@123"},
+				{"manu7@gmail.com","test11233"}
 				
 	};
 		return data;
